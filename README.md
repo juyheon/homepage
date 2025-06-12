@@ -1,12 +1,29 @@
-# React + Vite
+# 🌐 프로젝트 설계 구상서
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. 개요
+- 개인 글을 공유하는 블로
+- 사용자 친화적인 UI, 댓글 소통 가능
 
-Currently, two official plugins are available:
+## 2. 주요 기능
+- 로그인/로그아웃
+- 글 CRUD
+- 댓글 작성 및 삭제
+- 카테고리/태그 분류
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 3. 사용자 흐름
+- 방문자 → 글 목록 → 상세 → 로그인 → 댓글
+- 사용자 → 마이페이지 → 글 쓰기
 
-## Expanding the ESLint configuration
+## 4. 화면 정의
+- 홈: 글 목록
+- 글 상세: 제목, 본문, 댓글
+- 로그인: 폼
+- 마이페이지: 글 관리
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 5. 데이터베이스 구조
+- User, Post, Comment 테이블 등
+
+## 6. 기술 스택
+- Front: React
+- Back: Sanic (Python)
+- DB: PostgreSQL
