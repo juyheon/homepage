@@ -9,7 +9,7 @@ function Program() {
         <>
             <Header />
                 <div>
-                    <h1>프로그램</h1>
+                    <h1>홈페이지</h1>
                 </div>
             <Footer />
         </>
