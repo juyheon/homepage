@@ -1,5 +1,3 @@
-import "tailwindcss";
-
 const Header = () => {
 
   return (
