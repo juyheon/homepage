@@ -1,3 +1,5 @@
+import logo from '../assets/logo.png';
+
 const Header = () => {
 
   return (
@@ -7,7 +9,7 @@ const Header = () => {
     // py-4: 상하 패딩 (1rem), px-4: 좌우 패딩 (1rem)
     // sm:px-6 lg:px-8: 반응형 디자인을 위해 중간/큰 화면에서 좌우 패딩을 더 넓게 설정
     // shadow-md: 헤더에 부드러운 그림자 효과를 주어 입체감을 더합니다.
-    <header className="bg-neutral-800 text-white py-4 px-4 sm:px-6 lg:px-8 shadow-md">
+    <header className="fixed top-0 left-0 w-full bg-neutral-800 text-white py-4 px-4 sm:px-6 lg:px-8 shadow-md">
       {/* 내부 컨테이너 */}
       {/* flex: Flexbox 컨테이너로 설정 */}
       {/* flex-wrap: 내용이 많아지면 줄바꿈을 허용하여 반응형으로 만듭니다. */}
@@ -21,7 +23,7 @@ const Header = () => {
           {/* hover:opacity-80 transition duration-300: 마우스 오버 시 투명도 변경 효과 */}
           <a href="/" className="block hover:opacity-80 transition duration-300 ease-in-out">
             <img
-              src="https://placehold.co/150x40/FFFFFF/000000?text=Your+Logo" // 로고 이미지 삽입
+              src={logo} // 로고 이미지 삽입
               alt="사이트 로고" // 웹 접근성을 위한 alt 텍스트
               className="h-10 w-auto" // 이미지 높이를 10 (40px)으로 설정하고 너비는 자동으로 조절
               onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/150x40/A33D4F/FFFFFF?text=Logo+Error"; e.target.alt="로고 이미지 로드 실패"; }} // 이미지 로드 실패 시 대체 이미지

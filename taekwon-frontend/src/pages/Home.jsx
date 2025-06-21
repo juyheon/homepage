@@ -8,9 +8,9 @@ const Home = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow container mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-4">Welcome to Taekwon</h1>
-        <p className="text-lg">
+      <main className="flex-grow container mx-auto p-4 mt-20">
+        <h1 className="text-3xl font-bold mb-4 text-white">Welcome to Taekwon</h1>
+        <p className="text-lg text-white">
           홈.
         </p>
          {Array.from({ length: 100 }).map((_, index) => (
