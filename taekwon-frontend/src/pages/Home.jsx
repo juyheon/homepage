@@ -13,7 +13,7 @@ const Home = () => {
         <p className="text-lg text-white">
           홈.
         </p>
-         {Array.from({ length: 100 }).map((_, index) => (
+          {Array.from({ length: 100 }).map((_, index) => (
           <br key={index} /> // 반복되는 요소에는 고유한 'key' prop이 필요합니다.
           ))}
       </main>
