@@ -1,43 +1,52 @@
 
 
 const Navie = () => {
-    return (
-        // 전체 네비 컨테이너
-        <nav className="flex flex-col min-h-screen">
-            {/*  Introducion link list */}
-            <div>
-                <li className="text-lg text-white"><a href="/introduction"> 인사말 </a></li>
-                <li className="text-lg text-white"><a href="/introduction"> 지도진 소개 </a></li>
-                <li className="text-lg text-white"><a href="/introduction"> 오시는 길 </a></li>
-            </div>
+  return (
+    <nav className="bg-neutral-800 py-6 px-8 text-white flex flex-col space-y-6">
+      {/* Introduction */}
+      <div>
+        <ul className="space-y-1">
+          <li><a href="/introduction" className="hover:underline">인사말</a></li>
+          <li><a href="/introduction" className="hover:underline">지도진 소개</a></li>
+          <li><a href="/introduction" className="hover:underline">오시는 길</a></li>
+        </ul>
+      </div>
 
-            {/*  Program link list */}
-            <div>
-                <li className="text-lg text-white"><a href="/Program"> 주간 수련계획표 </a></li>
-                <li className="text-lg text-white"><a href="/Program"> 수업시간표 </a></li>
-            </div>
+      {/* Program */}
+      <div>
+        <ul className="space-y-1">
+          <li><a href="/program" className="hover:underline">주간 수련계획표</a></li>
+          <li><a href="/program" className="hover:underline">수업시간표</a></li>
+        </ul>
+      </div>
 
-            {/*  Photo link list */}
-            <div>
-                <li className="text-lg text-white"><a href="/Photo"> 행사 </a></li>
-                <li className="text-lg text-white"><a href="/Photo"> 일상 </a></li>
-            </div>
+      {/* Photo */}
+      <div>
+        <ul className="space-y-1">
+          <li><a href="/photo" className="hover:underline">행사</a></li>
+          <li><a href="/photo" className="hover:underline">일상</a></li>
+        </ul>
+      </div>
 
-            {/*  Shop link list */}
-            <div>
-                <li className="text-lg text-white"><a href="/Shop"> 도복 </a></li>
-                <li className="text-lg text-white"><a href="/Shop"> 띠 </a></li>
-                <li className="text-lg text-white"><a href="/Shop"> 동하복 </a></li>
-            </div>
-            
-            {/*  Service link list */}
-            <div>
-                <li className="text-lg text-white"><a href="/Service"> 공지사항 </a></li>
-                <li className="text-lg text-white"><a href="/Service"> 후기 </a></li>
-                <li className="text-lg text-white"><a href="/Service"> 문의 </a></li>
-            </div>
-        </nav>
-    );
-}
+      {/* Shop */}
+      <div>
+        <ul className="space-y-1">
+          <li><a href="/shop" className="hover:underline">도복</a></li>
+          <li><a href="/shop" className="hover:underline">띠</a></li>
+          <li><a href="/shop" className="hover:underline">동하복</a></li>
+        </ul>
+      </div>
+
+      {/* Service */}
+      <div>
+        <ul className="space-y-1">
+          <li><a href="/service" className="hover:underline">공지사항</a></li>
+          <li><a href="/service" className="hover:underline">후기</a></li>
+          <li><a href="/service" className="hover:underline">문의</a></li>
+        </ul>
+      </div>
+    </nav>
+  );
+};
 
 export default Navie;

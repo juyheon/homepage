@@ -1,8 +1,10 @@
 import logo from '../assets/logo.png';
-
 import Navie from "./Navie";
 
+import { useState } from "react";
+
 const Header = () => {
+  const [isHovering, setIsHovering] = useState(false);
 
   return (
     <>
@@ -12,7 +14,11 @@ const Header = () => {
       {/* py-4: 상하 패딩 (1rem), px-4: 좌우 패딩 (1rem) */}
       {/* sm:px-6 lg:px-8: 반응형 디자인을 위해 중간/큰 화면에서 좌우 패딩을 더 넓게 설정 */}
       {/* shadow-md: 헤더에 부드러운 그림자 효과를 주어 입체감을 더합니다. */}
-      <header className="fixed top-0 left-0 w-full bg-neutral-800 text-white py-4 px-4 sm:px-6 lg:px-8 shadow-md">
+      <header 
+      className="fixed top-0 left-0 w-full bg-neutral-800 text-white py-4 px-4 sm:px-6 lg:px-8 shadow-md" 
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+      >
         {/* 내부 컨테이너 */}
         {/* flex: Flexbox 컨테이너로 설정 */}
         {/* flex-wrap: 내용이 많아지면 줄바꿈을 허용하여 반응형으로 만듭니다. */}
@@ -73,8 +79,17 @@ const Header = () => {
           </div>
         </div>
       </header>
-      {/* Navie 컴포넌트는 헤더 아래에 위치하여 추가적인 네비게이션 기능을 제공합니다. */}
-      <Navie />
+
+      {/* 소항목 메뉴, 상태에 따라 표시 */}
+      {isHovering && (
+        <div
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+          className="fixed top-[72px] w-full z-40 bg-white shadow-md transition-all duration-200"
+        >
+          <Navie />
+        </div>
+      )}
     </>
   );
 }
