@@ -10,6 +10,8 @@ import Photo from './pages/Photo.jsx'
 import Progarm from './pages/Program.jsx'
 import Service from './pages/Service.jsx'
 import Shop from './pages/Shop.jsx'
+import SignUp from './pages/SignUp.jsx';
+import Login from './pages/Login.jsx';
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
         <Route path="/program" element={<Progarm />} />
         <Route path="/service" element={<Service />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   )

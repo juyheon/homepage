@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'publicsans': ['"Public Sans"', 'sans-serif'],
+        'postnobills': ['"Post No Bills Colombo"', 'serif'],
+      },
+    },
   },
   plugins: [],
 }

@@ -1,10 +1,49 @@
 import logo from '../assets/logo.png';
 import Navie from "./Navie";
-
 import { useState } from "react";
+
+// 회원가입 모달 컴포넌트
+const SignUpModal = ({ onClose, onSwitch }) => (
+  <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+    <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md relative">
+      <button className="absolute top-3 right-3 text-gray-400 hover:text-gray-700 text-2xl" onClick={onClose}>&times;</button>
+      <h2 className="text-2xl font-bold mb-6 text-center text-[#A33D4F]">회원가입</h2>
+      <form>
+        <input type="text" placeholder="이름" className="w-full mb-3 px-4 py-2 border rounded" />
+        <input type="email" placeholder="이메일" className="w-full mb-3 px-4 py-2 border rounded" />
+        <input type="password" placeholder="비밀번호" className="w-full mb-6 px-4 py-2 border rounded" />
+        <button type="submit" className="w-full bg-[#A33D4F] text-white py-2 rounded font-semibold hover:bg-[#8F3546] transition">가입하기</button>
+      </form>
+      <div className="mt-6 text-center">
+        <span>이미 계정이 있으신가요? </span>
+        <button className="text-[#A33D4F] font-semibold hover:underline" onClick={onSwitch}>로그인</button>
+      </div>
+    </div>
+  </div>
+);
+
+// 로그인 모달 컴포넌트
+const LoginModal = ({ onClose, onSwitch }) => (
+  <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+    <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md relative">
+      <button className="absolute top-3 right-3 text-gray-400 hover:text-gray-700 text-2xl" onClick={onClose}>&times;</button>
+      <h2 className="text-2xl font-bold mb-6 text-center text-[#A33D4F]">로그인</h2>
+      <form>
+        <input type="email" placeholder="이메일" className="w-full mb-3 px-4 py-2 border rounded" />
+        <input type="password" placeholder="비밀번호" className="w-full mb-6 px-4 py-2 border rounded" />
+        <button type="submit" className="w-full bg-[#A33D4F] text-white py-2 rounded font-semibold hover:bg-[#8F3546] transition">로그인</button>
+      </form>
+      <div className="mt-6 text-center">
+        <span>계정이 없으신가요? </span>
+        <button className="text-[#A33D4F] font-semibold hover:underline" onClick={onSwitch}>회원가입</button>
+      </div>
+    </div>
+  </div>
+);
 
 const Header = () => {
   const [isHovering, setIsHovering] = useState(false);
+  const [modal, setModal] = useState(null); // null | 'signup' | 'login'
 
   return (
     <>
@@ -15,7 +54,7 @@ const Header = () => {
       {/* sm:px-6 lg:px-8: 반응형 디자인을 위해 중간/큰 화면에서 좌우 패딩을 더 넓게 설정 */}
       {/* shadow-md: 헤더에 부드러운 그림자 효과를 주어 입체감을 더합니다. */}
       <header 
-      className="fixed top-0 left-0 w-full bg-neutral-800 text-white py-4 px-4 sm:px-6 lg:px-8 shadow-md" 
+      className="fixed top-0 left-0 w-full bg-neutral-800 text-white py-4 px-4 sm:px-6 lg:px-8 shadow-md z-20" 
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
       >
@@ -61,18 +100,13 @@ const Header = () => {
           </nav>
           {/* 가입하기 버튼 기능 구현 X*/}
           {/* mt-4 sm:mt-0: 모바일 화면에서 위쪽 마진을 주고, sm(태블릿) 이상에서는 마진 제거 */}
-          <div className="mt-4 sm:mt-0">
-            {/* 버튼 스타일 */}
-            {/* bg-[#A33D4F]: 이미지 버튼과 유사한 커스텀 빨간색 배경 (HEX 코드 사용) */}
-            {/* text-white: 흰색 텍스트, font-semibold: 글씨 굵기 */}
-            {/* py-2 px-6: 세로/가로 패딩, rounded-md: 중간 정도의 둥근 모서리, shadow-md: 그림자 효과 */}
-            {/* hover:bg-[#8F3546]: 마우스 오버 시 배경색을 더 진한 빨간색으로 변경 */}
-            {/* transition duration-300 transform hover:scale-105: 호버 시 부드러운 확대 애니메이션 추가 */}
-            {/* focus:outline-none focus:ring-2 focus:ring-[#A33D4F] focus:ring-opacity-50: 키보드 포커스 시 아웃라인 제거 및 링 효과 추가 */}
+          <div className="mt-4 sm:mt-0 flex gap-3">
+            {/* 회원가입 버튼 */}
             <button
               className="bg-[#A33D4F] text-white font-semibold py-2 px-6 rounded-md shadow-md
                         hover:bg-[#8F3546] transition duration-300 transform hover:scale-105
                         focus:outline-none focus:ring-2 focus:ring-[#A33D4F] focus:ring-opacity-50"
+              onClick={() => setModal('signup')}
             >
               가입하기
             </button>
@@ -89,6 +123,13 @@ const Header = () => {
         >
           <Navie />
         </div>
+      )}
+
+      {modal === 'signup' && (
+        <SignUpModal onClose={() => setModal(null)} onSwitch={() => setModal('login')} />
+      )}
+      {modal === 'login' && (
+        <LoginModal onClose={() => setModal(null)} onSwitch={() => setModal('signup')} />
       )}
     </>
   );
