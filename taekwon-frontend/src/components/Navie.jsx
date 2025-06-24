@@ -1,4 +1,5 @@
-
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navie = () => {
   return (
@@ -7,43 +8,43 @@ const Navie = () => {
       {/* Introduction */}
       <div>
         <ul className="space-y-1">
-          <li><a href="/introduction" className="hover:underline">인사말</a></li>
-          <li><a href="/introduction" className="hover:underline">지도진 소개</a></li>
-          <li><a href="/introduction" className="hover:underline">오시는 길</a></li>
+          <li><Link to="/introduction/Rreeting" className="hover:underline">인사말</Link></li>
+          <li><Link to="/introduction/MasterList" className="hover:underline">지도진 소개</Link></li>
+          <li><Link to="/introduction/DirectionsMap" className="hover:underline">오시는 길</Link></li>
         </ul>
       </div>
 
       {/* Program */}
       <div>
         <ul className="space-y-1 ml-1">
-          <li><a href="/program" className="hover:underline">주간수련계획표</a></li>
-          <li><a href="/program" className="hover:underline">수업시간표</a></li>
+          <li><Link to="/program/WeeklyPlanner" className="hover:underline">주간수련계획표</Link></li>
+          <li><Link to="/program/ClassSchedule" className="hover:underline">수업시간표</Link></li>
         </ul>
       </div>
 
       {/* Photo */}
       <div>
         <ul className="space-y-1 ml-4">
-          <li><a href="/photo" className="hover:underline">행사</a></li>
-          <li><a href="/photo" className="hover:underline">일상</a></li>
+          <li><Link to="/photo/Event" className="hover:underline">행사</Link></li>
+          <li><Link to="/photo/DailyMoments" className="hover:underline">일상</Link></li>
         </ul>
       </div>
 
       {/* Shop */}
       <div>
         <ul className="space-y-1 ml-6">
-          <li><a href="/shop" className="hover:underline">도복</a></li>
-          <li><a href="/shop" className="hover:underline">띠</a></li>
-          <li><a href="/shop" className="hover:underline">동하복</a></li>
+          <li><Link to="/shop/Dobok" className="hover:underline">도복</Link></li>
+          <li><Link to="/shop/Belt" className="hover:underline">띠</Link></li>
+          <li><Link to="/shop/SeasonalUniform" className="hover:underline">동하복</Link></li>
         </ul>
       </div>
 
       {/* Service */}
       <div>
         <ul className="space-y-1 ml-6">
-          <li><a href="/service" className="hover:underline">공지사항</a></li>
-          <li><a href="/service" className="hover:underline">후기</a></li>
-          <li><a href="/service" className="hover:underline">문의</a></li>
+          <li><Link to="/service/NoticeBoard" className="hover:underline">공지사항</Link></li>
+          <li><Link to="/service/ReviewSection" className="hover:underline">후기</Link></li>
+          <li><Link to="/service/Contact" className="hover:underline">문의</Link></li>
         </ul>
       </div>
     </nav>

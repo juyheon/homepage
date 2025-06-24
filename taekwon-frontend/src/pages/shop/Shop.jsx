@@ -1,11 +1,8 @@
 import { useEffect } from "react";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
-import Dobok from "../components/nav/Dobok"
-import Belt from "../components/nav/Belt"
-import SeasonalUniform from "../components/nav/SeasonalUniform"
 
 const Shop = () => {
 
@@ -18,13 +15,6 @@ const Shop = () => {
           shop one page.
         </p>
       </main>
-
-            {/* nav폴더의 컴포넌트 소항목  */}
-      <Dobok />
-
-      <Belt />
-
-      <SeasonalUniform />
 
       <Footer />
     </div>

@@ -1,10 +1,7 @@
 import { useEffect } from "react";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-
-import WeeklyPlanner from "../components/nav/WeeklyPlanner"
-import ClassSchedule from "../components/nav/ClassSchedule"
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 
 const Photo = () => {
@@ -18,11 +15,6 @@ const Photo = () => {
           photo one page.
         </p>
       </main>
-
-      {/* nav폴더의 컴포넌트 소항목  */}
-      <WeeklyPlanner />
-
-      <ClassSchedule />
 
       <Footer />
     </div>

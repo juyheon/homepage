@@ -92,8 +92,8 @@ const Header = () => {
               {/* transition duration-300 ease-in-out: 밑줄 효과에 부드러운 전환 추가 */}
               {/* px-2 py-1 rounded-md: 링크 클릭 영역을 좀 더 넓히고 부드러운 모서리 추가 (미세한 터치 영역 개선) */}
               <li><a href="/introduction" className="text-lg hover:underline transition duration-300 ease-in-out px-2 py-1 rounded-md">Introduction</a></li>
-              <li><a href="/photo" className="text-lg hover:underline transition duration-300 ease-in-out px-2 py-1 rounded-md">Photo</a></li>
               <li><a href="/program" className="text-lg hover:underline transition duration-300 ease-in-out px-2 py-1 rounded-md">Program</a></li>
+              <li><a href="/photo" className="text-lg hover:underline transition duration-300 ease-in-out px-2 py-1 rounded-md">Photo</a></li>
               <li><a href="/shop" className="text-lg hover:underline transition duration-300 ease-in-out px-2 py-1 rounded-md">Shop</a></li>
               <li><a href="/service" className="text-lg hover:underline transition duration-300 ease-in-out px-2 py-1 rounded-md">Service</a></li>
             </ul>
