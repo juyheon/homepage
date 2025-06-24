@@ -9,6 +9,12 @@ export default {
       container: {
         center: true,
       },
+      fontFamily: {
+        songmyung: ['Song Myung', 'serif'],
+        publicsans: ['Public Sans', 'sans-serif'],
+        postnobills: ['"Post No Bills Colombo"', 'serif'],
+        saira: ['"Saira Stencil One"', 'cursive'],
+      },
     },
   },
   plugins: [],

@@ -42,7 +42,7 @@ const Home = () => {
         <div className="flex flex-row justify-center mt-[100px]">
           <div>
             <h1 className="text-[50px] text-white mr-[300px] mb-0 font-publicsans">태권도</h1>
-            <h2 className="text-[30px] text-white font-postnobills">Teo Kwon Do</h2>
+            <h2 className="text-[30px] text-white font-saira">Teo Kwon Do</h2>
           </div>
           <div>
             <p className="text-lg text-white mb-4">
