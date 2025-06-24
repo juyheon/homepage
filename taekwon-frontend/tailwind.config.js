@@ -6,9 +6,8 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        'publicsans': ['"Public Sans"', 'sans-serif'],
-        'postnobills': ['"Post No Bills Colombo"', 'serif'],
+      container: {
+        center: true,
       },
     },
   },

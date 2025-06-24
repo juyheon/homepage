@@ -1,7 +1,6 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg' 사진
 
-import { useState } from 'react'
 import { Routes, Route } from "react-router-dom";
 
 import Home from './pages/Home.jsx'
@@ -12,28 +11,28 @@ import Login from './components/Login.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 
-import Introducion from './pages/introducion/Introducion.jsx'
-import Rreeting from './pages/introducion/Rreeting.jsx'
-import MasterList from './pages/introducion/MasterList.jsx'
-import DirectionsMap from './pages/introducion/DirectionsMap.jsx'
+import Introducion from './pages/introducionPages/Introducion.jsx'
+import Rreeting from './pages/introducionPages/Rreeting.jsx'
+import MasterList from './pages/introducionPages/MasterList.jsx'
+import DirectionsMap from './pages/introducionPages/DirectionsMap.jsx'
 
-import Progarm from './pages/program/Program.jsx'
-import WeeklyPlanner from './pages/program/WeeklyPlanner.jsx'
-import ClassSchedule from './pages/program/ClassSchedule.jsx'
+import Progarm from './pages/programPages/Program.jsx'
+import WeeklyPlanner from './pages/programPages/WeeklyPlanner.jsx'
+import ClassSchedule from './pages/programPages/ClassSchedule.jsx'
 
-import Photo from './pages/photo/Photo.jsx'
-import Event from './pages/photo/Event.jsx'
-import DailyMoments from './pages/photo/DailyMoments.jsx'
+import Photo from './pages/photoPages/Photo.jsx'
+import Event from './pages/photoPages/Event.jsx'
+import DailyMoments from './pages/photoPages/DailyMoments.jsx'
 
-import Shop from './pages/shop/Shop.jsx'
-import Dobok from './pages/shop/Dobok.jsx'
-import Belt from './pages/shop/Belt.jsx'
-import SeasonalUniform from './pages/shop/SeasonalUniform.jsx'
+import Shop from './pages/shopPages/Shop.jsx'
+import Dobok from './pages/shopPages/Dobok.jsx'
+import Belt from './pages/shopPages/Belt.jsx'
+import SeasonalUniform from './pages/shopPages/SeasonalUniform.jsx'
 
-import Service from './pages/service/Service.jsx'
-import NoticeBoard from './pages/service/NoticeBoard.jsx'
-import ReviewSection from './pages/service/ReviewSection.jsx'
-import Contact from './pages/service/Contact.jsx'
+import Service from './pages/servicePages/Service.jsx'
+import NoticeBoard from './pages/servicePages/NoticeBoard.jsx'
+import ReviewSection from './pages/servicePages/ReviewSection.jsx'
+import Contact from './pages/servicePages/Contact.jsx'
 
 function App() {
 
