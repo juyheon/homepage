@@ -22,7 +22,6 @@ const Introducion = () => {
 
   return (
     <>
-      <Header />
 
       <h1>학원 소개</h1>
 
@@ -41,8 +40,6 @@ const Introducion = () => {
       </section>
 
       {/* 다른 섹션들... */}
-
-      <Footer />  
     </>
   );
 };

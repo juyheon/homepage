@@ -9,6 +9,9 @@ import NotFound from './pages/NotFound.jsx'
 import SignUp from './components/SignUp.jsx';
 import Login from './components/Login.jsx';
 
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
+
 import Introducion from './pages/introducion/Introducion.jsx'
 import Rreeting from './pages/introducion/Rreeting.jsx'
 import MasterList from './pages/introducion/MasterList.jsx'
@@ -35,48 +38,52 @@ import Contact from './pages/service/Contact.jsx'
 function App() {
 
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home />} />
+    <div className="flex flex-col min-h-screen"> {/* 전체 앱 높이 설정 */}
+      <Header />
+      <main className="flex-grow pt-[72px]"> {/* Header 높이만큼 패딩 */}
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-        <Route path="/introduction" element={<Introducion />}>
-          <Route index element={<div>소개 메인 페이지</div>} />
-          <Route path="Rreeting" element={<Rreeting />} />
-          <Route path="MasterList" element={<MasterList />} />
-          <Route path="DirectionsMap" element={<DirectionsMap />} />
-        </Route>
+          <Route path="/introduction" element={<Introducion />}>
+            <Route index element={<div>소개 메인 페이지</div>} />
+            <Route path="Rreeting" element={<Rreeting />} />
+            <Route path="MasterList" element={<MasterList />} />
+            <Route path="DirectionsMap" element={<DirectionsMap />} />
+          </Route>
 
-        <Route path="/program" element={<Progarm />}>
-          <Route index element={<div>프로그램 메인 페이지</div>} />
-          <Route path="WeeklyPlanner" element={<WeeklyPlanner />} />
-          <Route path="ClassSchedule" element={<ClassSchedule />} />
-        </Route>
-        
-        <Route path="/photo" element={<Photo />}>
-          <Route index element={<div>포토 메인 페이지</div>} />
-          <Route path="Event" element={<Event />} />
-          <Route path="DailyMoments" element={<DailyMoments />} />
-        </Route>
+          <Route path="/program" element={<Progarm />}>
+            <Route index element={<div>프로그램 메인 페이지</div>} />
+            <Route path="WeeklyPlanner" element={<WeeklyPlanner />} />
+            <Route path="ClassSchedule" element={<ClassSchedule />} />
+          </Route>
+          
+          <Route path="/photo" element={<Photo />}>
+            <Route index element={<div>포토 메인 페이지</div>} />
+            <Route path="Event" element={<Event />} />
+            <Route path="DailyMoments" element={<DailyMoments />} />
+          </Route>
 
-        <Route path="/shop" element={<Shop />}>
-          <Route index element={<div>숍 메인 페이지</div>} />
-          <Route path="Dobok" element={<Dobok />} />
-          <Route path="Belt" element={<Belt />} />
-          <Route path="SeasonalUniform" element={<SeasonalUniform />} />
-        </Route>
+          <Route path="/shop" element={<Shop />}>
+            <Route index element={<div>숍 메인 페이지</div>} />
+            <Route path="Dobok" element={<Dobok />} />
+            <Route path="Belt" element={<Belt />} />
+            <Route path="SeasonalUniform" element={<SeasonalUniform />} />
+          </Route>
 
-        <Route path="/service" element={<Service />}>
-          <Route index element={<div>서비스 메인 페이지</div>} />
-          <Route path="NoticeBoard" element={<NoticeBoard />} />
-          <Route path="ReviewSection" element={<ReviewSection />} />
-          <Route path="Contact" element={<Contact />} />
-        </Route>
+          <Route path="/service" element={<Service />}>
+            <Route index element={<div>서비스 메인 페이지</div>} />
+            <Route path="NoticeBoard" element={<NoticeBoard />} />
+            <Route path="ReviewSection" element={<ReviewSection />} />
+            <Route path="Contact" element={<Contact />} />
+          </Route>
 
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </>
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   )
 }
 
