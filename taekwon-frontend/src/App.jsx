@@ -44,33 +44,33 @@ function App() {
           <Route path="/" element={<Home />} />
 
           <Route path="/introduction" element={<Introducion />}>
-            <Route index element={<div>소개 메인 페이지</div>} />
+            <Route index element={<div>소개</div>} />
             <Route path="Rreeting" element={<Rreeting />} />
             <Route path="MasterList" element={<MasterList />} />
             <Route path="DirectionsMap" element={<DirectionsMap />} />
           </Route>
 
           <Route path="/program" element={<Progarm />}>
-            <Route index element={<div className="text-white">안녕하세요</div>} />
+            <Route index element={<div>프로그램</div>} />
             <Route path="WeeklyPlanner" element={<WeeklyPlanner />} />
             <Route path="ClassSchedule" element={<ClassSchedule />} />
           </Route>
           
           <Route path="/photo" element={<Photo />}>
-            <Route index element={<div>포토 메인 페이지</div>} />
+            <Route index element={<div>사진</div>} />
             <Route path="Event" element={<Event />} />
             <Route path="DailyMoments" element={<DailyMoments />} />
           </Route>
 
           <Route path="/shop" element={<Shop />}>
-            <Route index element={<div>숍 메인 페이지</div>} />
+            <Route index element={<div>상점</div>} />
             <Route path="Dobok" element={<Dobok />} />
             <Route path="Belt" element={<Belt />} />
             <Route path="SeasonalUniform" element={<SeasonalUniform />} />
           </Route>
 
           <Route path="/service" element={<Service />}>
-            <Route index element={<div>서비스 메인 페이지</div>} />
+            <Route index element={<div>서비스</div>} />
             <Route path="NoticeBoard" element={<NoticeBoard />} />
             <Route path="ReviewSection" element={<ReviewSection />} />
             <Route path="Contact" element={<Contact />} />
