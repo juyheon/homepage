@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen"> {/* 전체 앱 높이 설정 */}
       <Header />
-      <main className="flex-grow pt-[200px]"> {/* Header 높이만큼 패딩 */}
+      <main className="flex-grow pt-[100px]"> {/* Header 높이만큼 패딩 */}
         <Routes>
           <Route path="/" element={<Home />} />
 

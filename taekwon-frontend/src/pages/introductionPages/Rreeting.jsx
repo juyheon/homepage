@@ -4,7 +4,7 @@ import logo from '../../assets/logo.png';
 const Rreeting = () => {
 
   return (
-    <div className="flex flex-col min-h-screen container mt-20 p-4">
+    <div className="flex flex-col min-h-screen container p-4">
       <div className="flex items-center justify-center mt-[20px] mb-[20px]">
         <h1 className="text-[25px] font-bold mr-[100px] mb-0 leading-tight" style={{ color: 'rgba(150,150,150,1)' }}>최고의 태권도 지도진들로 모인<br/>인천서구 "N0.1" 태권도장</h1>
         <img src={logo} alt="Taekwon Logo" className="h-[130px] w-auto mb-0 align-middle ml-[100px] filter grayscale" style={{ filter: 'grayscale(1) brightness(0.6)', opacity: 1 }} />
