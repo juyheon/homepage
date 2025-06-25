@@ -11,10 +11,10 @@ import Login from './components/Login.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 
-import Introducion from './pages/introducionPages/Introducion.jsx'
-import Rreeting from './pages/introducionPages/Rreeting.jsx'
-import MasterList from './pages/introducionPages/MasterList.jsx'
-import DirectionsMap from './pages/introducionPages/DirectionsMap.jsx'
+import Introducion from './pages/introductionPages/Introduction.jsx'
+import Rreeting from './pages/introductionPages/Rreeting.jsx'
+import MasterList from './pages/introductionPages/MasterList.jsx'
+import DirectionsMap from './pages/introductionPages/DirectionsMap.jsx'
 
 import Progarm from './pages/programPages/Program.jsx'
 import WeeklyPlanner from './pages/programPages/WeeklyPlanner.jsx'
@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen"> {/* 전체 앱 높이 설정 */}
       <Header />
-      <main className="flex-grow pt-[72px]"> {/* Header 높이만큼 패딩 */}
+      <main className="flex-grow pt-[200px]"> {/* Header 높이만큼 패딩 */}
         <Routes>
           <Route path="/" element={<Home />} />
 
