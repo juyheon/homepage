@@ -51,7 +51,7 @@ function App() {
           </Route>
 
           <Route path="/program" element={<Progarm />}>
-            <Route index element={<div>프로그램 메인 페이지</div>} />
+            <Route index element={<div className="text-white">안녕하세요</div>} />
             <Route path="WeeklyPlanner" element={<WeeklyPlanner />} />
             <Route path="ClassSchedule" element={<ClassSchedule />} />
           </Route>
