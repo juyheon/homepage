@@ -15,7 +15,7 @@ const Program = () => {
 
   return (
     <div>
-      {/* {showImages && (
+      {showImages && (
         <div className="w-full overflow-x-auto py-4">
           <div className="flex gap-4 min-w-max">
             {images.map((img, idx) => (
@@ -29,8 +29,7 @@ const Program = () => {
             ))}
           </div>
         </div>
-      )} */}
-      <div text-white>안녕하세요</div>
+      )}
       {/* 여기가 중요! 자식 라우트의 컴포넌트가 렌더링될 위치 */}
       <Outlet />
     </div>

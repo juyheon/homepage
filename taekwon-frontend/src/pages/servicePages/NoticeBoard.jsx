@@ -1,32 +1,31 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const posts = [
   {
     id: 1,
-    title: "6월달 마음으로 드리는 글",
-    image: programe6,
-    content: "6월달 안내문입니다."
+    title: "6월 휴관안내",
+    content: "6월은 대통령 선거와 현충일로 인해 6/3일 6/6일은 휴관입니다.<br />등원에 차질없게 참고해주시면 감사드리겠습니다."
   },
   {
     id: 2,
-    title: "7월달 마음으로 드리는 글",
-    image: programe7,
-    content: "7월달 안내문입니다."
+    title: "6월 서구청장기 겨루기대회 안내",
+    content: "아이들의 노력의 열매가 열릴 서구청장기 겨루기대회가 다가왔습니다.<br/><br/>집합시간:오전6시까지 본도장에 도착<br/><br/>장소:인천공항 스카이돔 실내체육관<br/><br/>대회진행:오전8시30분 시작 ~ 오후1시예정<br/><br/>(부모님 응원시 오전 8시30분까지)<br/><br/>주차:당일 오전7시~오후7시까지 모든차량 무료주차<br/><br/>점심:선수들 점심식사는 밥차로 준비하였습니다.석사태권도 모든 선수들의 경기가 끝난 후 함께 식사하도록 하겠습니다"
   }
 ];
 
 const NoticeBoard = () => {
+  const [selectedPost, setSelectedPost] = useState(null);
 
   return (
     <div className="flex flex-col min-h-screen items-center justify-center bg-black">
       <main className="flex-grow container mx-auto p-4 w-full max-w-2xl">
-        <h2 className="text-2xl font-bold mb-6 text-center text-white">월간 마음으로 드리는 글</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center text-white">공지사항 게시판</h2>
         <div className="bg-black shadow-md rounded-lg overflow-hidden text-white">
           <ul>
             {posts.map((post) => (
               <li
                 key={post.id}
-                className="border-b last:border-b-0 cursor-pointer hover:gray px-6 py-4"
+                className="border-b last:border-b-0 cursor-pointer hover:bg-gray-800 px-6 py-4"
                 onClick={() => setSelectedPost(post)}
               >
                 <span className="font-semibold">{post.title}</span>
@@ -46,8 +45,10 @@ const NoticeBoard = () => {
                 ×
               </button>
               <h3 className="text-2xl font-bold mb-6">{selectedPost.title}</h3>
-              <img src={selectedPost.image} alt={selectedPost.title} className="w-full h-auto rounded mb-6" />
-              <p className="text-lg">{selectedPost.content}</p>
+              <p
+                className="text-lg"
+                dangerouslySetInnerHTML={{ __html: selectedPost.content }}
+              ></p>
             </div>
           </div>
         )}
