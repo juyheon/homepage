@@ -23,8 +23,8 @@ const WeeklyPlanner = () => {
 
   return (
     <div className="flex flex-col min-h-screen items-center justify-center bg-black">
-      <main className="flex-grow container mx-auto p-4 mt-20 w-full max-w-2xl">
-        <h2 className="text-2xl font-bold mb-6 text-center">월간 마음으로 드리는 글</h2>
+      <main className="flex-grow container mx-auto p-4 w-full max-w-2xl">
+        <h2 className="text-2xl font-bold mb-6 text-center text-white">월간 마음으로 드리는 글</h2>
         <div className="bg-black shadow-md rounded-lg overflow-hidden text-white">
           <ul>
             {posts.map((post) => (
