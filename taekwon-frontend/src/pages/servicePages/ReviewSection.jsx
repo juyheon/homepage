@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const initialReviews = [
-  { id: 1, name: "홍길동", content: "도장이 깨끗하고 선생님이 친절해요!" },
+  { id: 1, name: "홍길동", content: "선생님이 깨끗하고 도장이 친절해요!" },
   { id: 2, name: "김영희", content: "아이들이 즐겁게 운동해서 좋아요." }
 ];
 
@@ -47,101 +47,106 @@ const ReviewSection = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen text-white">
-      <main className="flex-grow container mx-auto p-4 mt-20 max-w-xl">
-        <h2 className="text-2xl font-bold mb-4">후기</h2>
-        <ul>
+    <div className="flex flex-col min-h-screen bg-zinc-950 text-white"> {/* 전체 배경색을 더 진한 검정 계열로 변경 */}
+      <main className="flex-grow container mx-auto p-4 py-12 mt-20 max-w-xl bg-gray-800 rounded-lg shadow-xl border-4 border-black"> {/* border-4 border-black 추가 */}
+        <h2 className="text-3xl font-extrabold mb-6 pb-2 border-b-2 border-gray-700 text-center">후기</h2>
+        
+        {reviews.length === 0 && (
+          <p className="text-gray-400 text-center py-8">아직 등록된 후기가 없습니다. 첫 후기를 남겨주세요!</p>
+        )}
+
+        <ul className="space-y-4">
           {reviews.map(review => (
-            <li key={review.id} className="border-b py-2 flex flex-col gap-1">
-              <div>
-                <strong>{review.name}</strong>
+            <li key={review.id} className="bg-gray-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div className="mb-2">
+                <strong className="text-lg text-gray-300">{review.name}</strong>
               </div>
               {editId === review.id ? (
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-2 items-stretch sm:items-center">
                   <input
-                    className="border p-1 flex-1"
+                    className="border border-gray-600 bg-gray-600 text-white p-2 rounded flex-1 focus:outline-none focus:ring-2 focus:ring-gray-500"
                     value={editContent}
                     onChange={e => setEditContent(e.target.value)}
                   />
-                  <button
-                    className="bg-green-500 text-white px-2 rounded"
-                    onClick={() => handleEditSave(review.id)}
-                  >
-                    저장
-                  </button>
-                  <button
-                    className="bg-gray-400 text-white px-2 rounded"
-                    onClick={() => setEditId(null)}
-                  >
-                    취소
-                  </button>
+                  <div className="flex gap-2 mt-2 sm:mt-0">
+                    <button
+                      className="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors duration-200 text-sm"
+                      onClick={() => handleEditSave(review.id)}
+                    >
+                      저장
+                    </button>
+                    <button
+                      className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-colors duration-200 text-sm"
+                      onClick={() => setEditId(null)}
+                    >
+                      취소
+                    </button>
+                  </div>
                 </div>
               ) : (
-                <div className="flex items-center gap-2">
-                  <span>{review.content}</span>
-                  <button
-                    className="text-sm text-blue-500"
-                    onClick={() => handleEdit(review.id, review.content)}
-                  >
-                    수정
-                  </button>
-                  <button
-                    className="text-sm text-red-500"
-                    onClick={() => handleDelete(review.id)}
-                  >
-                    삭제
-                  </button>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
+                  <span className="text-gray-200 flex-1">{review.content}</span>
+                  <div className="flex gap-2 mt-2 sm:mt-0">
+                    <button
+                      className="text-sm text-gray-400 hover:text-gray-300 transition-colors duration-200 px-2 py-1 rounded border border-gray-400 hover:border-gray-300"
+                      onClick={() => handleEdit(review.id, review.content)}
+                    >
+                      수정
+                    </button>
+                    <button
+                      className="text-sm text-red-400 hover:text-red-300 transition-colors duration-200 px-2 py-1 rounded border border-red-400 hover:border-red-300"
+                      onClick={() => handleDelete(review.id)}
+                    >
+                      삭제
+                    </button>
+                  </div>
                 </div>
               )}
             </li>
           ))}
         </ul>
+
+        {/* 후기 작성 버튼 */}
+        <div className="w-full flex justify-end mt-8">
+          <button
+            className="bg-gray-600 text-white px-6 py-3 rounded-lg text-lg font-bold shadow-lg hover:bg-gray-700 transition-colors duration-200"
+            onClick={() => setShowModal(true)}
+          >
+            후기 작성
+          </button>
+        </div>
       </main>
-      {/* 하단 고정 등록 버튼 제거 */}
-      {/* <div className="w-full flex justify-end fixed bottom-0 left-0 bg-black bg-opacity-80 p-4 z-50">
-        <button
-          className="bg-blue-500 text-white px-6 py-3 rounded text-lg font-bold shadow-lg"
-          onClick={() => setShowModal(true)}
-        >
-          등록
-        </button>
-      </div> */}
-      {/* 후기 작성 버튼을 footer 위로 이동 */}
-      <div className="w-full flex justify-end bg-black bg-opacity-80 p-4">
-        <button
-          className="bg-blue-500 text-white px-6 py-3 rounded text-lg font-bold shadow-lg"
-          onClick={() => setShowModal(true)}
-        >
-          등록
-        </button>
-      </div>
+
       {/* 후기 작성 모달 */}
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg shadow-lg p-8 max-w-[400px] w-full relative">
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
+          <div className="bg-gray-700 rounded-lg shadow-2xl p-8 max-w-[400px] w-full relative border border-gray-600">
             <button
-              className="absolute top-0 right-2 text-gray-500 hover:text-gray-700 text-[32px]"
+              className="absolute top-2 right-2 text-gray-300 hover:text-white text-4xl font-light leading-none"
               onClick={() => setShowModal(false)}
               aria-label="닫기"
             >
-              ×
+              &times;
             </button>
-            <h3 className="text-xl font-bold mb-4 text-black">후기 작성</h3>
-            <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+            <h3 className="text-2xl font-bold mb-6 text-white text-center">후기 작성</h3>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <input
-                className="border p-2"
-                placeholder="이름"
+                className="border border-gray-600 bg-gray-600 text-white p-3 rounded focus:outline-none focus:ring-2 focus:ring-gray-500 placeholder-gray-400"
+                placeholder="이름을 입력하세요"
                 value={name}
                 onChange={e => setName(e.target.value)}
               />
-              <input
-                className="border p-2"
-                placeholder="후기 내용"
+              <textarea
+                className="border border-gray-600 bg-gray-600 text-white p-3 rounded h-24 resize-none focus:outline-none focus:ring-2 focus:ring-gray-500 placeholder-gray-400"
+                placeholder="후기 내용을 입력하세요"
                 value={content}
                 onChange={e => setContent(e.target.value)}
               />
-              <button className="bg-blue-500 text-white px-4 py-2 rounded self-end" type="submit">
-                등록
+              <button
+                className="bg-gray-600 text-white px-6 py-3 rounded-lg self-end text-lg font-bold hover:bg-gray-700 transition-colors duration-200"
+                type="submit"
+              >
+                등록하기
               </button>
             </form>
           </div>
